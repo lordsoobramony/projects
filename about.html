@@ -1,0 +1,125 @@
+<html>
+    <title>About</title>
+    <style>
+         nav{
+            float: right;
+            margin-top: -90px;
+        }
+
+         a {
+            display:inline-block;
+            padding: 20px;
+            color: rgb(255, 255, 255);
+           transition: background-color 0.3s ease;
+
+
+        }
+
+        a:hover{
+       color:rgb(60, 60, 109);
+       
+     }
+
+        header{
+            color: white;
+            padding: 10px;
+            margin: -10px;
+           background-color: rgn(5,5, 19);
+        }
+        #header1{
+      margin-left:25px;
+    }
+
+        html{
+            background-color:rgb(5, 5, 19) ;
+
+        }
+
+        p{
+            color: white;
+        }
+
+        #p1{
+            color:rgb(60, 60, 109);
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        #p2{
+            color: white;
+            text-align: center;
+        }
+
+        #rays-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ray {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform-origin: 0 0;
+        }
+
+    </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const raysContainer = document.getElementById("rays-container");
+
+        function createRay() {
+            const ray = document.createElement("div");
+            ray.className = "ray";
+            ray.style.top = Math.random() * 100 + "vh";
+            ray.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+            ray.style.transform = `rotate(${Math.random() * 360}deg)`;
+            raysContainer.appendChild(ray);
+        }
+
+        const numberOfRays = 60;
+        for (let i = 0; i < numberOfRays; i++) {
+            createRay();
+        }
+    });
+</script>
+    <head>
+        <header>
+            <h1 id="header1">A.s</h1>
+
+            <nav><h2>
+                <a href="home.html">home</a>
+                <a href="about.html">about</a>
+                <a href="contact.html">contact</a>
+            </h2>
+            </nav>
+
+        </header>
+    </head>
+
+    <body>
+        <p>
+            <h1 id="p1">About me</h1>
+        </p>
+        <p> <h2 id="p2">
+            Dedicated and hardworking IT <br>
+professional with a Diploma in <br>
+Information Technology and hands-on <br>
+experience in network administration. <br>
+Eager to leverage skills in <br>
+programming, web development, and <br>
+project management to contribute <br>
+effectively as a junior developer <br> </h2>
+        </p>
+
+        <div id="rays-container"></div>
+    </body>
+
+    
+</html>
